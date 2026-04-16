@@ -20,7 +20,6 @@ public class AteroidSpawner_myown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Generamos un pool de asteroides 
         for(int i = 0; i < 5; i++)
         {
             GameObject _newAsteroid = Instantiate(asteroid, origin);

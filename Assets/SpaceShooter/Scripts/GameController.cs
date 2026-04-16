@@ -77,7 +77,6 @@ public class GameController : MonoBehaviour
 
     public void UpdatePlayerScore(int asteroidHitPoints)
     {
-        //Como este metodo es llamado por ortras clases tenemos que poner una condicion 
         if(currentGameStatus == GameStates.Playing) { 
             playerScore += asteroidHitPoints; 
         }
@@ -110,11 +109,11 @@ public class GameController : MonoBehaviour
         }
 
         //Using PlayersPrefs
-        //if(playerScore > PlayerPrefs.GetInt("HighScore"))
-        //{
-        //    PlayerPrefs.SetInt("HighScore", playerScore);
-        //    highScoreGUUI.text = PlayerPrefs.GetInt("HighScore").ToString() ;
-        //}
+        if(playerScore > PlayerPrefs.GetInt("HighScore"))
+        {
+           PlayerPrefs.SetInt("HighScore", playerScore);
+           highScoreGUUI.text = PlayerPrefs.GetInt("HighScore").ToString() ;
+        }
     }
 
     public void resetGame()

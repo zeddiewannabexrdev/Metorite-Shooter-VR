@@ -27,8 +27,7 @@ public class LazerGun : MonoBehaviour
 
     RaycastHit hit; 
     public void LazerGunFired()
-    {
-        //Animate de gun 
+    { 
         laserAnimator.SetTrigger("Fire");
         //Play lazer effects 
         _laserAudioSource.PlayOneShot(laserSFX);
@@ -40,7 +39,6 @@ public class LazerGun : MonoBehaviour
                 hit.transform.GetComponent<AsteroidDestroyed>().AsteroidHitted();
             }
             else if(hit.transform.GetComponent<IRaycastInterface>() != null){
-                //Aqui estamos disparando el evento de cualquier objeto que tenga una clase que implemente de IRaycastInterface 
                 hit.transform.GetComponent<IRaycastInterface>().HitByRaycast(); 
             }
             //Debug.DrawRay(raycastOrigin.position, transform.TransformDirection(raycastOrigin.forward) * hit.distance, Color.yellow);

@@ -32,12 +32,6 @@ public class AsteroidDestroyed : MonoBehaviour
             int bonusPoints = (int)distanceFrom;
             int asteroidScore = 10 * bonusPoints;
 
-
-            //Esto se puede mejorar con un evento 
-            //Aqui se dispara el evento de 
-
-
-
             popupcanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = asteroidScore.ToString();
             GameObject asteroidPopUp = Instantiate(popupcanvas,transform.position,Quaternion.identity);
             asteroidPopUp.transform.localScale = new Vector3(transform.localScale.x * (distanceFrom / 10),
@@ -55,7 +49,6 @@ public class AsteroidDestroyed : MonoBehaviour
 
 
         //Calculate score for hitting 
-        //La idea es que gane puntos por cada meteorito igual a la distancia a la que se encuentra. 
 
 
 
