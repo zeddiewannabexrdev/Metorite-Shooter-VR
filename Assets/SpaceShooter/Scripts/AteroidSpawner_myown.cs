@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/**
- * El proposito de esta clase es generar asteroides de forma aleatoria 
- * Problema 1 : Mover de un lado a otro un objeto 
- * 
- */
 public class AteroidSpawner_myown : MonoBehaviour
 {
     [Header("Spawn directions")]
