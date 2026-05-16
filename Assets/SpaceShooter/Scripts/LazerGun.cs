@@ -14,6 +14,7 @@ public class LazerGun : MonoBehaviour
     [SerializeField] private float raycastMaxDistance=800f;
 
     private AudioSource _laserAudioSource;
+    RaycastHit hit;
 
     private void Awake()
     {
@@ -23,9 +24,6 @@ public class LazerGun : MonoBehaviour
         }
     }
 
-
-
-    RaycastHit hit; 
     public void LazerGunFired()
     { 
         laserAnimator.SetTrigger("Fire");
@@ -41,7 +39,6 @@ public class LazerGun : MonoBehaviour
             else if(hit.transform.GetComponent<IRaycastInterface>() != null){
                 hit.transform.GetComponent<IRaycastInterface>().HitByRaycast(); 
             }
-            //Debug.DrawRay(raycastOrigin.position, transform.TransformDirection(raycastOrigin.forward) * hit.distance, Color.yellow);
         }
 
     }

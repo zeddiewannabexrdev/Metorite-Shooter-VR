@@ -14,11 +14,8 @@ public class AsteroidDestroyed : MonoBehaviour
 
     private void Awake()
     {
-        gameController = FindAnyObjectByType<GameController>();
-        
-        
+        gameController = FindAnyObjectByType<GameController>();        
     }
-
 
     public void AsteroidHitted()
     {
@@ -46,12 +43,6 @@ public class AsteroidDestroyed : MonoBehaviour
 
 
         this.gameObject.GetComponent<PooledObject>().Release();
-
-
-        //Calculate score for hitting 
-
-
-
         //Destroy(this.gameObject);
     }
 

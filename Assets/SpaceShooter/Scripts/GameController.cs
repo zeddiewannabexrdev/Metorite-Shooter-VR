@@ -39,14 +39,7 @@ public class GameController : MonoBehaviour
     {
         currentGameStatus = GameStates.Wating;
 
-        //Using PlayersPrefs
-        //if(PlayerPrefs.HasKey("HighScore"))
-        //{
-        //    highScoreGUUI.text = PlayerPrefs.GetInt("HighScore").ToString();
-        //}
-
     }
-
 
     // Update is called once per frame
     void Update()
@@ -69,7 +62,6 @@ public class GameController : MonoBehaviour
 
     }
 
-
     private void AdjustScore()
     {
         textMeshProUGUI.text = playerScore.ToString();
@@ -86,17 +78,12 @@ public class GameController : MonoBehaviour
     {
         currentGameStatus=GameStates.Playing;
 
-        //gameplayAudioSource.clip = mainGameAudio;
-        //gameplayAudioSource.Play();
         PlayeGameAudio(mainGameAudio, true);
     }
     private void gameOver()
     {
         currentGameStatus = GameStates.GameOver; 
 
-        //gameplayAudioSource.clip = gameOverAudio;
-        //gameplayAudioSource.loop = false;
-        //gameplayAudioSource.Play();
         PlayeGameAudio(gameOverAudio, false);
         gameOverScreen.SetActive(true);
 
@@ -119,10 +106,6 @@ public class GameController : MonoBehaviour
     public void resetGame()
     {
         currentGameStatus = GameStates.Wating;
-
-        //gameplayAudioSource.clip = introAudio;
-        //gameplayAudioSource.loop = true;
-        //gameplayAudioSource.Play();
         PlayeGameAudio(introAudio, true);
 
         playerScore = 0;
